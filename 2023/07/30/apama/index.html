@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>linux上安装apama Installation on Solaris and Linux | zhiqiang博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="This chapter provides information and instructions for installing a Server version of Apama Release 5.0 on Solaris and Linux systems.You can download the installation package from the Apama Electroni">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux上安装apama Installation on Solaris and Linux">
+<meta property="og:url" content="https://maidoupig.cn/2023/07/30/apama/index.html">
+<meta property="og:site_name" content="zhiqiang博客">
+<meta property="og:description" content="This chapter provides information and instructions for installing a Server version of Apama Release 5.0 on Solaris and Linux systems.You can download the installation package from the Apama Electroni">
+<meta property="og:locale">
+<meta property="article:published_time" content="2023-07-30T12:10:23.000Z">
+<meta property="article:modified_time" content="2023-07-30T15:14:57.938Z">
+<meta property="article:author" content="汤志强">
+<meta property="article:tag" content="apama">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="zhiqiang博客" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8584717808316832"
+     crossorigin="anonymous"></script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">zhiqiang博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Suche"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Suche"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://maidoupig.cn"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-apama" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/07/30/apama/" class="article-date">
+  <time class="dt-published" datetime="2023-07-30T12:10:23.000Z" itemprop="datePublished">2023-07-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      linux上安装apama Installation on Solaris and Linux
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>
+This chapter provides information and instructions for installing a Server version of Apama Release
+5.0 on Solaris and Linux systems.You can download the installation package from the Apama
+Electronic Software Distribution (ESD) site.<br>
+The installation logs for the Apama Server installation can be found in the Apama installation's
+logs directory. If you accepted the default installation location, the path is something like this: <br>
+/opt/Progress/Apama_5.0/install/Apama_5.0.0.0/logs <br>
+For details, see the following topics: <br>
+• Installation prerequisites on Solaris and Linux <br>
+• Linux platform notes <br>
+• Apama 5.0 installation procedure on Solaris and Linux <br>
+• Post-installation steps on Solaris and Linux <br>
+• What was installed on Solaris and Linux <br>
+• Uninstalling Apama on Solaris and Linux <br>
+</p>
+
+<h2 id="Installation-prerequisites-on-Solaris-and-Linux"><a href="#Installation-prerequisites-on-Solaris-and-Linux" class="headerlink" title="Installation prerequisites on Solaris and Linux"></a>Installation prerequisites on Solaris and Linux</h2><p>
+To be able to install Apama on your system, you must have local Administrator privileges.<br>
+If you have an earlier release of Apama on your system it is highly recommended that you uninstall<br>
+the previous version and then install Apama 5.0. In all cases, you cannot have two installed versions<br>
+of the Apama Management & Monitoring Agent service (also called the Sentinel Agent) running<br>
+concurrently without changing default port settings.<br>
+An Apama installation on Solaris or Linux must satisfy the following requirement:<br>
+• 500MB free disk space.<br>
+• The Apama Dashboard Server port (default 3278) must be accessible by Dashboard Viewer.<br>
+If you are using Solaris or Linux with the firewall enabled, you need to unblock network access<br>
+for this port.<br>
+• If you are deploying Java applications, when you start the correlator and specify the -j option,<br>
+the correlator starts a Java Virtual Machine. It uses the first JRE/JDK in the PATH environment<br>
+variable. It is highly recommended that you use JRE 7.0 update 5, which is the version that<br>
+Apama ships with.<br>
+Web clients can access Apama dashboards through any Apama host supported web browser. No<br>
+Apama installation is required for web clients but they must satisfy the following requirements:<br>
+• Oracle's(Sun's) Java plug-in (version 1.7.0_5 or later) must be installed for dashboards deployed<br>
+either as applets or through Java Web Start technology. There is no Java plug-in requirement<br>
+for dashboards deployed with the Apama Dashboard Display Server.<br>
+• Your browser must have cookies enabled for web pages served from the host where you are<br>
+running your application server.<br>
+• If you have a pop-up blocker, be sure to set it to allow popups for web pages served from the<br>
+host where you are running your application server.<br>
+</p>
+
+<h2 id="Linux-platform-notes"><a href="#Linux-platform-notes" class="headerlink" title="Linux platform notes"></a>Linux platform notes</h2><p>
+efore installing Apama 5.0 on Linux, consider the following:<br>
+• No support for Security Enhanced Linux on page 32<br>
+• Linux development and samples on page 32<br>
+• Linux and Solaris root permissions on page 33<br>
+</p>
+
+<h3 id="No-support-for-Security-Enhanced-Linux"><a href="#No-support-for-Security-Enhanced-Linux" class="headerlink" title="No support for Security Enhanced Linux"></a>No support for Security Enhanced Linux</h3><p>
+Apama does not support Security Enhanced Linux (SELinux). This option should be turned off on<br>
+Linux for Apama to run.<br>
+</p>
+
+<h3 id="Linux-development-and-samples"><a href="#Linux-development-and-samples" class="headerlink" title="Linux development and samples"></a>Linux development and samples</h3><p>
+To build the samples and develop applications using the C/C++ API, development tools that are<br>
+not present in the default installation of the supported platforms must be installed. On all supported<br>
+Linux platforms the GCC-C++ package and all its dependencies must be installed. These are all<br>
+provided on the installation media provided with the distribution.<br>
+</p>
+
+<h3 id="Linux-and-Solaris-root-permissions"><a href="#Linux-and-Solaris-root-permissions" class="headerlink" title="Linux and Solaris root permissions"></a>Linux and Solaris root permissions</h3><p>
+On all UNIX platforms if Apama is installed by the root user then the resulting ApamaWork_5.0<br>
+directory will also be owned by root.This can cause problems for non-root users who run Apama<br>
+tools; they may not be able to write to ApamaWork_5.0.To support non-root users in installations<br>
+owned by root do one of the following:<br>
+• Change the permissions or owner of ApamaWork_5.0 and its subdirectories to allow write<br>
+access by users.<br>
+• Define the environment variable APAMA_WORK and set its value to an ApamaWork_5.0 directory<br>
+the users have write access to.<br>
+</p>
+
+<h2 id="Apama-5-0-installation-procedure-on-Solaris-and-Linux"><a href="#Apama-5-0-installation-procedure-on-Solaris-and-Linux" class="headerlink" title="Apama 5.0 installation procedure on Solaris and Linux"></a>Apama 5.0 installation procedure on Solaris and Linux</h2><p>
+To install the Server version of Apama 5.0 on Solaris or Linux, you can run the installation program<br>
+either in an X Windows environment or in console mode.The X server does not need to be running<br>
+on the same host as the installation program; remote X connections are fully supported. For a<br>
+remote installation, check that the DISPLAY environment variable is set appropriately before starting<br>
+the installer.<br>
+It is recommended that, for administration purposes, you create a separate user (for example,<br>
+apama) for installing and running Apama components.<br>
+There are two installation options on Solaris and Linux:<br>
+• Performing an Apama 5.0 GUI installation on page 33<br>
+• Performing an Apama 5.0 console installation on page 37<br>
+</p>
+
+<h3 id="Performing-an-Apama-5-0-GUI-installation"><a href="#Performing-an-Apama-5-0-GUI-installation" class="headerlink" title="Performing an Apama 5.0 GUI installation"></a>Performing an Apama 5.0 GUI installation</h3><p>
+To perform a GUI installation of Apama Release 5.0 on Solaris or Linux machines: <br>
+1. If you intend the software to be used by a specific dedicated user account, such as apama,<br>
+login as this user.<br>
+2. Use gunzip to uncompress the archive file.<br>
+3. Unpack the archive file to some temporary directory. Be sure to preserve directory names and<br>
+structure. For example:<br>
+tar -xf PROGRESS_APAMA.tar .<br>
+4. Run ./install.bin from the solaris or linux directory within the temporary directory.<br>
+You can remove the temporary directory after installation is complete.<br>
+5. Click Next to proceed with the Installation Wizard.<br>
+6. You must accept the terms of the license agreement before you can install. Click Next.<br>
+7. Accept the default locations for installing Apama and for Apama's workspace or specify different
+locations. The user account performing the installation must have permission to write to the
+specified directories. Click Next.<br>
+8. Confirm that you want to install the Apama Server set including the correlator, dashboard
+servers, and other management tools. Then click Next<br>
+If the installation script cannot install the Apama service, it displays a message to indicate this
+and also displays the name of the script to run after installation. If necessary, make a note of
+this script, and run it after installation to add the Apama service.<br>
+9. Review the pre-installation summary (click Previous to make any changes). Then click Install
+to complete the installation.<br>
+10. The installation wizard shows the progress of the installation.<br>
+The progress bar does not necessarily reflect actual installation progress. The bar might not
+move for several minutes, but the installation is progressing.<br>
+11. When the installation is complete, click Next<br>
+If the installation script detected a license file when it started the installation, it displays instructions
+for where to store the Apama license file. Be sure to follow these instructions.
+</p>
+
+<h3 id="Performing-an-Apama-5-0-console-installation"><a href="#Performing-an-Apama-5-0-console-installation" class="headerlink" title="Performing an Apama 5.0 console installation"></a>Performing an Apama 5.0 console installation</h3><p>
+To perform a console installation of the Server version of Apama Release 5.0 on Solaris or Linux
+machines:<br>
+
+<ol>
+<li>If you intend the software to be used by a specific dedicated user account, such as apama, log<br>in as this user.<br></li>
+<li>Use gunzip to uncompress the archive file.<br></li>
+<li>Unpack the archive file to some temporary directory. Be sure to preserve directory names and<br>structure. For example:<br><br>tar -xf PROGRESS_APAMA.tar<br></li>
+<li>Run .&#x2F;install.bin -i console from the solaris or linux directory within the temporary<br>directory. (You can remove the temporary directory once the installation is complete.)<br>This starts the Apama installation. Press Enter to continue.<br></li>
+<li>You must accept the terms of the license agreement before you can install Apama.You can<br>scroll and read through the entire agreement or you can skip to the end where you can indicate<br>that you agree. <br><br>At the appropriate prompt, after scrolling through the license information or skipping to the end,<br>enter Y.<br></li>
+<li>Accept the default location or specify a different location for installing Apama. <br></li>
+<li>Accept the default location or specify a different location for the Apama work directory.<br></li>
+<li>Enter 1 to specify that you want to install the Server install set.<br><br>If you do not have permission to install the Apama service, the installation script displays a<br>message to let you know. It also indicates that you can run the<br><br>Progress&#x2F;Apama_5.0&#x2F;bin&#x2F;apama_services script after installation to add the services.<br></li>
+<li>Review the pre-installation summary and press Enter to continue the installation.<br></li>
+<li>The installation is complete. Press Enter.<br></li>
+<li>The installation script provides information about where to put your Apama license file. Be sure<br>to follow these instructions. Press Enter to exit the installer.<br></li>
+</ol>
+<h2 id="Post-installation-steps-on-Solaris-and-Linux"><a href="#Post-installation-steps-on-Solaris-and-Linux" class="headerlink" title="Post-installation steps on Solaris and Linux"></a>Post-installation steps on Solaris and Linux</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">After installation, there are a few simple steps you must follow.The following topics describe these</span><br><span class="line">steps:</span><br><span class="line">• Copy the license file on page 42</span><br><span class="line">• Set up the environment on page 42</span><br><span class="line">• Start the Apama service if needed on page 42</span><br><span class="line">• Set up Apama Sonic Integration Service on page 42</span><br></pre></td></tr></table></figure>
+
+<h3 id="Copy-the-license-file"><a href="#Copy-the-license-file" class="headerlink" title="Copy the license file"></a>Copy the license file</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">After installation, copy your Apama license file to the license directory in your Apama work</span><br><span class="line">directory. If you accepted the default Apama work directory location then the path for your license</span><br><span class="line">file will be something like the following, where ~ indicates your home directory:</span><br><span class="line">~/Progress/ApamaWork_5.0/license/license.txt</span><br><span class="line">For details about Apama behavior when a license file expires, see Overview of Installing Apama</span><br><span class="line">on page 11.</span><br></pre></td></tr></table></figure>
+
+<h3 id="Set-up-the-environment"><a href="#Set-up-the-environment" class="headerlink" title="Set up the environment"></a>Set up the environment</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">After installation, source the apama_env file, which is in the bin directory of your Apama installation</span><br><span class="line">directory. This script sets up the Apama environment, including setting the following environment</span><br><span class="line">variables:</span><br><span class="line">• APAMA_HOME</span><br><span class="line">• APAMA_WORK</span><br><span class="line">• APAMA_JRE</span><br></pre></td></tr></table></figure>
+
+<h3 id="Start-the-Apama-service-if-needed"><a href="#Start-the-Apama-service-if-needed" class="headerlink" title="Start the Apama service if needed"></a>Start the Apama service if needed</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">During installation, the installer starts the Apama Management &amp; Monitoring Agent service if it can.</span><br><span class="line">If you need to start or restart this service, do one of the following:</span><br><span class="line">• Run the apama_services file, which is in the bin directory of your Apama installation directory.</span><br><span class="line">You can use this script to do the following:</span><br><span class="line">• Add the service if you did not add it during installation</span><br><span class="line">• Start and stop the service</span><br><span class="line">• Perform other service management operations</span><br><span class="line">Usage information is in the file.</span><br><span class="line">• Run the executable for the service. If you installed Apama in the default location, the path for</span><br><span class="line">the executable is /opt/Progress/Apama_5.0/bin/sentinel_agent.</span><br></pre></td></tr></table></figure>
+<h3 id="Set-up-Apama-Sonic-Integration-Service"><a href="#Set-up-Apama-Sonic-Integration-Service" class="headerlink" title="Set up Apama Sonic Integration Service"></a>Set up Apama Sonic Integration Service</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">The Apama Sonic Integration Service provides a way to send Apama events and Sonic XQMessages</span><br><span class="line">back and forth between Apama applications and the Sonic ESB. For information about setting up</span><br><span class="line">this service, see &quot;The Apama Sonic integration service&quot; in Deploying and Managing Apama</span><br><span class="line">Applications.</span><br></pre></td></tr></table></figure>
+<h2 id="Uninstalling-Apama-on-Solaris-and-Linux"><a href="#Uninstalling-Apama-on-Solaris-and-Linux" class="headerlink" title="Uninstalling Apama on Solaris and Linux"></a>Uninstalling Apama on Solaris and Linux</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Before you uninstall Apama, ensure that all Apama components and applications are no longer</span><br><span class="line">running.</span><br><span class="line">To uninstall Apama:</span><br><span class="line">1. Run the uninstall_apama_5.0 utility, located in the Apama’s uninstall directory. The</span><br><span class="line">default location is /opt/Progress/Apama_5.0/uninstall.</span><br><span class="line">2. The uninstall wizard opens.</span><br><span class="line">3. Click Uninstall. The uninstall process proceeds.</span><br><span class="line">4. After the uninstall process is complete, delete the Apama installation directory.</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://maidoupig.cn/2023/07/30/apama/" data-id="clkpl2dah0000r02edh5f086w" data-title="linux上安装apama Installation on Solaris and Linux" class="article-share-link"><span class="fa fa-share">Teilen</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/apama/" rel="tag">apama</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2023/07/23/power-of-cycle/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Älter</strong>
+      <div class="article-nav-title">2023-07-23 十大券商最新研判，相信周期的力量</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/apama/" rel="tag">apama</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%A4%E6%98%93-%E5%A4%A7a%E7%A0%94%E5%88%A4/" rel="tag">交易 大a研判</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A2%A7%E6%A1%90%E5%B1%B1-%E6%A2%A7%E6%A1%90%E5%B1%B1%E6%94%BB%E7%95%A5-%E7%99%BB%E6%A2%A7%E6%A1%90%E5%B1%B1%E6%94%B6%E8%8E%B7%E4%BD%93%E4%BC%9A/" rel="tag">梧桐山 梧桐山攻略 登梧桐山收获体会</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%9B%99%E6%B3%B3-%E6%B8%B8%E6%B3%B3-%E8%87%AA%E5%AD%A6%E6%B8%B8%E6%B3%B3/" rel="tag">蛙泳 游泳 自学游泳</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/apama/" style="font-size: 10px;">apama</a> <a href="/tags/%E4%BA%A4%E6%98%93-%E5%A4%A7a%E7%A0%94%E5%88%A4/" style="font-size: 10px;">交易 大a研判</a> <a href="/tags/%E6%A2%A7%E6%A1%90%E5%B1%B1-%E6%A2%A7%E6%A1%90%E5%B1%B1%E6%94%BB%E7%95%A5-%E7%99%BB%E6%A2%A7%E6%A1%90%E5%B1%B1%E6%94%B6%E8%8E%B7%E4%BD%93%E4%BC%9A/" style="font-size: 10px;">梧桐山 梧桐山攻略 登梧桐山收获体会</a> <a href="/tags/%E8%9B%99%E6%B3%B3-%E6%B8%B8%E6%B3%B3-%E8%87%AA%E5%AD%A6%E6%B8%B8%E6%B3%B3/" style="font-size: 10px;">蛙泳 游泳 自学游泳</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archiv</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">letzter Beitrag</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/07/30/apama/">linux上安装apama Installation on Solaris and Linux</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/23/power-of-cycle/">2023-07-23 十大券商最新研判，相信周期的力量</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/03/swimming/">自学七次，从零入门蛙泳</a>
+          </li>
+        
+          <li>
+            <a href="/2023/06/26/wutong-moutain/">2023年6月25日登梧桐山</a>
+          </li>
+        
+          <li>
+            <a href="/2023/06/24/helloworld/">helloworld &amp; 端午节快乐</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8584717808316832"
+     crossorigin="anonymous"></script>
+<!-- blog_side_adv -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8584717808316832"
+     data-ad-slot="8988240443"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</aside>
+
+
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 汤志强<br>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
