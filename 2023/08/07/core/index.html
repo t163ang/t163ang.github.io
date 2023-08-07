@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>core | zhiqiang博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="&amp;#x20;1. 打开core开关&amp;#x20;1.1  控制台方式（当前console有效）123ulimit -c 0 # 不产生coreulimit -c 1024 # 限制core大小1024kulimit -c unlimited # 不限制core大小  &amp;#x20;1.2 配置方式123vim &#x2F;etc&#x2F;security&#x2F;limits.conf去掉soft co">
+<meta property="og:type" content="article">
+<meta property="og:title" content="core">
+<meta property="og:url" content="https://maidoupig.cn/2023/08/07/core/index.html">
+<meta property="og:site_name" content="zhiqiang博客">
+<meta property="og:description" content="&amp;#x20;1. 打开core开关&amp;#x20;1.1  控制台方式（当前console有效）123ulimit -c 0 # 不产生coreulimit -c 1024 # 限制core大小1024kulimit -c unlimited # 不限制core大小  &amp;#x20;1.2 配置方式123vim &#x2F;etc&#x2F;security&#x2F;limits.conf去掉soft co">
+<meta property="og:locale">
+<meta property="article:published_time" content="2023-08-07T13:57:57.000Z">
+<meta property="article:modified_time" content="2023-08-07T13:59:26.958Z">
+<meta property="article:author" content="汤志强">
+<meta property="article:tag" content="linux c++">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="zhiqiang博客" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8584717808316832"
+     crossorigin="anonymous"></script>
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">zhiqiang博客</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS Feed"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="Search"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://maidoupig.cn"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-core" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/08/07/core/" class="article-date">
+  <time class="dt-published" datetime="2023-08-07T13:57:57.000Z" itemprop="datePublished">2023-08-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      core
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="amp-x20-1-打开core开关"><a href="#amp-x20-1-打开core开关" class="headerlink" title="&amp;#x20;1. 打开core开关"></a>&amp;#x20;1. 打开core开关</h2><h3 id="amp-x20-1-1-控制台方式（当前console有效）"><a href="#amp-x20-1-1-控制台方式（当前console有效）" class="headerlink" title="&amp;#x20;1.1  控制台方式（当前console有效）"></a>&amp;#x20;1.1  控制台方式（当前console有效）</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ulimit</span> -c 0 <span class="comment"># 不产生core</span></span><br><span class="line"><span class="built_in">ulimit</span> -c 1024 <span class="comment"># 限制core大小1024k</span></span><br><span class="line"><span class="built_in">ulimit</span> -c unlimited <span class="comment"># 不限制core大小</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="amp-x20-1-2-配置方式"><a href="#amp-x20-1-2-配置方式" class="headerlink" title="&amp;#x20;1.2 配置方式"></a>&amp;#x20;1.2 配置方式</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/security/limits.conf</span><br><span class="line">去掉soft core 0注释，并将0改为unlimited</span><br><span class="line">soft core 0 </span><br></pre></td></tr></table></figure>
+
+<h2 id="amp-x20-2-修改core命名规则或生成路径"><a href="#amp-x20-2-修改core命名规则或生成路径" class="headerlink" title="&amp;#x20;2. 修改core命名规则或生成路径"></a>&amp;#x20;2. 修改core命名规则或生成路径</h2><h3 id="amp-x20-2-1-默认下core在当前目录下，并且命名为core-pid；"><a href="#amp-x20-2-1-默认下core在当前目录下，并且命名为core-pid；" class="headerlink" title="&amp;#x20;2.1 默认下core在当前目录下，并且命名为core.pid；"></a>&amp;#x20;2.1 默认下core在当前目录下，并且命名为core.pid；</h3><h3 id="2-2-临时修改："><a href="#2-2-临时修改：" class="headerlink" title="2.2 临时修改："></a>2.2 临时修改：</h3><p>可以直接修改<code>/proc/sys/kernel/core_pattern</code>文件的内容。例如，使用命令<code>echo &#39;/var/log/%e.core.%p&#39; &gt; /proc/sys/kernel/core_pattern</code>，就可以将core dump文件的生成路径设置为<code>/var/log/</code>目录，文件名设置为进程名和进程ID。需要注意的是，<code>/proc</code>目录是动态加载的，每次系统重启都会重新加载，因此这种方法只能作为临时修改。</p>
+<h3 id="2-3-永久修改"><a href="#2-3-永久修改" class="headerlink" title="2.3 永久修改"></a>2.3 永久修改</h3><p>&amp;#x20;如果想要永久修改core dump文件的生成路径和命名规则，可以通过修改<code>/etc/sysctl.conf</code>文件来实现。在<code>/etc/sysctl.conf</code>文件中，添加一行<code>kernel.core_pattern = /var/log/%e.core.%p</code>，然后保存退出。最后，使用命令<code>sysctl -p</code>使修改生效。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">kernel.core_pattern= /var/log/%e.core.%p</span><br></pre></td></tr></table></figure>
+
+<h3 id="amp-x20-2-4-core-pattern的格式可以包含以下一些元素："><a href="#amp-x20-2-4-core-pattern的格式可以包含以下一些元素：" class="headerlink" title="&amp;#x20;2.4 core_pattern的格式可以包含以下一些元素："></a>&amp;#x20;2.4 <code>core_pattern</code>的格式可以包含以下一些元素：</h3><ul>
+<li><code>%p</code>：转储过程的PID</li>
+<li><code>%u</code>：转储进程的实际UID</li>
+<li><code>%g</code>：转储过程的实际GID</li>
+<li><code>%s</code>：引起转储的信号数</li>
+<li><code>%t</code>：转储时间，表示为自1970年1月1日00:00:00 +0000（UTC）以来的秒数</li>
+<li><code>%h</code>：主机名（与uname（2）返回的节点名相同）</li>
+<li><code>%e</code>：可执行文件名（无路径前缀）</li>
+<li><code>%E</code>：可执行文件的路径名，用斜杠（’&#x2F;’）替换为感叹号（’！ ’）</li>
+<li><code>%c</code>：崩溃过程的核心文件大小软资源限制（自Linux 2.6.24开始）</li>
+</ul>
+<h2 id="amp-x20-3-生效-amp-x20"><a href="#amp-x20-3-生效-amp-x20" class="headerlink" title="&amp;#x20;3. 生效&amp;#x20;"></a>&amp;#x20;3. 生效&amp;#x20;</h2><p>重启或这sysclt -p立即生效</p>
+<h2 id="4-设置core-pattern建议"><a href="#4-设置core-pattern建议" class="headerlink" title="4. 设置core_pattern建议"></a>4. 设置core_pattern建议</h2><ol>
+<li>设置core文件的存放路径和文件名模式：你可以通过设置<code>/proc/sys/kernel/core_pattern</code>来指定core文件的存放路径和文件名模式。例如，你可以使用命令<code>echo &quot;/var/log/core-%e-%p-%t&quot; &gt; /proc/sys/kernel/core_pattern</code>，这样当程序崩溃产生core dump时，会直接以这种格式存入到<code>/var/log/</code>目录下。</li>
+<li>使用进程ID和时间戳：在文件名模式中，建议至少包含<code>%p</code>（进程ID）和<code>%t</code>（时间戳），这样可以帮助你更好地区分不同的core dump文件。</li>
+<li>使用可执行文件名：如果你的系统中运行了多个程序，那么在文件名模式中包含<code>%e</code>（可执行文件名）可能会很有帮助，这样你可以知道是哪个程序产生了core dump。</li>
+<li>使用管道符号：如果你希望在生成core dump文件的同时进行一些其他操作（例如压缩或发送通知），你可以在<code>core_pattern</code>的开头添加管道符号<code>|</code>，然后指定一个脚本，core dump将会以标准输入的形式传给这个脚本。</li>
+<li>设置core文件的最大值：默认情况下，core文件的大小可能会受到限制。你可以使用<code>ulimit -c unlimited</code>命令来取消这个限制，或者设置一个适合你的系统的大小。</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://maidoupig.cn/2023/08/07/core/" data-id="cll0xvu5w0000u62eh7c5bsyn" data-title="core" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux-c/" rel="tag">linux c++</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2023/08/05/qt/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">qt环境安装</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/apama/" rel="tag">apama</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cmake/" rel="tag">cmake</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/docker/" rel="tag">docker</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux-c/" rel="tag">linux c++</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E4%BA%A4%E6%98%93-%E5%A4%A7a%E7%A0%94%E5%88%A4/" rel="tag">交易 大a研判</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%A2%A7%E6%A1%90%E5%B1%B1-%E6%A2%A7%E6%A1%90%E5%B1%B1%E6%94%BB%E7%95%A5-%E7%99%BB%E6%A2%A7%E6%A1%90%E5%B1%B1%E6%94%B6%E8%8E%B7%E4%BD%93%E4%BC%9A/" rel="tag">梧桐山 梧桐山攻略 登梧桐山收获体会</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%9B%99%E6%B3%B3-%E6%B8%B8%E6%B3%B3-%E8%87%AA%E5%AD%A6%E6%B8%B8%E6%B3%B3/" rel="tag">蛙泳 游泳 自学游泳</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/apama/" style="font-size: 10px;">apama</a> <a href="/tags/cmake/" style="font-size: 10px;">cmake</a> <a href="/tags/docker/" style="font-size: 10px;">docker</a> <a href="/tags/linux-c/" style="font-size: 10px;">linux c++</a> <a href="/tags/%E4%BA%A4%E6%98%93-%E5%A4%A7a%E7%A0%94%E5%88%A4/" style="font-size: 10px;">交易 大a研判</a> <a href="/tags/%E6%A2%A7%E6%A1%90%E5%B1%B1-%E6%A2%A7%E6%A1%90%E5%B1%B1%E6%94%BB%E7%95%A5-%E7%99%BB%E6%A2%A7%E6%A1%90%E5%B1%B1%E6%94%B6%E8%8E%B7%E4%BD%93%E4%BC%9A/" style="font-size: 10px;">梧桐山 梧桐山攻略 登梧桐山收获体会</a> <a href="/tags/%E8%9B%99%E6%B3%B3-%E6%B8%B8%E6%B3%B3-%E8%87%AA%E5%AD%A6%E6%B8%B8%E6%B3%B3/" style="font-size: 10px;">蛙泳 游泳 自学游泳</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/08/">August 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/07/">July 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2023/06/">June 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/08/07/core/">core</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/05/qt/">qt环境安装</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/05/cmake/">cmake学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/05/docker/">docker命令</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/30/apama/">linux上安装apama Installation on Solaris and Linux</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8584717808316832"
+     crossorigin="anonymous"></script>
+<!-- blog_side_adv -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8584717808316832"
+     data-ad-slot="8988240443"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</aside>
+
+
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 汤志强<br>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

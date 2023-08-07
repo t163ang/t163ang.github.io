@@ -4,13 +4,17 @@
   <meta charset="utf-8">
   
   
-  <title>Tag: cmake | zhiqiang博客</title>
+  <title>qt环境安装 | zhiqiang博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="zhiqiang博客">
-<meta property="og:url" content="https://maidoupig.cn/tags/cmake/index.html">
+  <meta name="description" content="mac1. 前言本文内容将简单介绍mac系统下安装qt。qt官方仓库下载速度极慢，本文介绍使用国内清华镜像来进行加速。 2.  安装步骤 下载在线安装器进入清华镜像网站https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;，搜索qt，点击?后点击下载在线安装器  查找安装执行文件双击安装包后，右键选择“显示包内容”，并进入Contents&#x2F;MacOs&#x2F;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="qt环境安装">
+<meta property="og:url" content="https://maidoupig.cn/2023/08/05/qt/index.html">
 <meta property="og:site_name" content="zhiqiang博客">
+<meta property="og:description" content="mac1. 前言本文内容将简单介绍mac系统下安装qt。qt官方仓库下载速度极慢，本文介绍使用国内清华镜像来进行加速。 2.  安装步骤 下载在线安装器进入清华镜像网站https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;，搜索qt，点击?后点击下载在线安装器  查找安装执行文件双击安装包后，右键选择“显示包内容”，并进入Contents&#x2F;MacOs&#x2F;">
 <meta property="og:locale">
+<meta property="article:published_time" content="2023-08-05T06:56:56.000Z">
+<meta property="article:modified_time" content="2023-08-05T07:01:35.515Z">
 <meta property="article:author" content="汤志强">
 <meta name="twitter:card" content="summary">
   
@@ -73,39 +77,91 @@
 </header>
 
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2023" class="archive-year">2023</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2023/08/05/cmake/" class="archive-article-date">
-  <time class="dt-published" datetime="2023-08-05T06:45:34.000Z" itemprop="datePublished">Aug 5</time>
+        <section id="main"><article id="post-qt" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/08/05/qt/" class="article-date">
+  <time class="dt-published" datetime="2023-08-05T06:56:56.000Z" itemprop="datePublished">2023-08-05</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2023/08/05/cmake/">cmake学习笔记</a>
+    <h1 class="p-name article-title" itemprop="headline name">
+      qt环境安装
     </h1>
   
 
-    </header>
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <h2 id="mac"><a href="#mac" class="headerlink" title="mac"></a>mac</h2><h3 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h3><p>本文内容将简单介绍mac系统下安装qt。qt官方仓库下载速度极慢，本文介绍使用国内清华镜像来进行加速。</p>
+<h3 id="2-安装步骤"><a href="#2-安装步骤" class="headerlink" title="2.  安装步骤"></a>2.  安装步骤</h3><ul>
+<li><p>下载在线安装器<br>进入清华镜像网站<a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/%EF%BC%8C%E6%90%9C%E7%B4%A2qt%EF%BC%8C%E7%82%B9%E5%87%BB?%E5%90%8E%E7%82%B9%E5%87%BB%E4%B8%8B%E8%BD%BD%E5%9C%A8%E7%BA%BF%E5%AE%89%E8%A3%85%E5%99%A8">https://mirrors.tuna.tsinghua.edu.cn/，搜索qt，点击?后点击下载在线安装器</a></p>
+</li>
+<li><p>查找安装执行文件<br>双击安装包后，右键选择“显示包内容”，并进入Contents&#x2F;MacOs&#x2F; </p>
+</li>
+<li><p>执行安装文件<br>拖拽文件qt-unified-macOS-x64-4.5.1-online 到终端并加入指定镜像参数–mirror <a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/qt">https://mirrors.tuna.tsinghua.edu.cn/qt</a></p>
+</li>
+<li><p>安装步骤</p>
+</li>
+</ul>
+<ol>
+<li>注册账号，点击下一步</li>
+<li>选择安装路径，并指定自定义选择安装组件</li>
+</ol>
+<h2 id="windows"><a href="#windows" class="headerlink" title="windows"></a>windows</h2><p>windows的安装类似于mac, 这里简要说明。</p>
+<ul>
+<li><p>清华镜像加速安装<br>将官网下载的qt-unified-windows-x64-4.5.1-online拖到命令窗口并添加上清华镜像参数–mirror <a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/qt">https://mirrors.tuna.tsinghua.edu.cn/qt</a></p>
+</li>
+<li><p>执行安装<br>根据自己情况选择安装自己需要的组件，如下图所示。</p>
+</li>
+</ul>
+<h2 id="qt内嵌浏览器对比"><a href="#qt内嵌浏览器对比" class="headerlink" title="qt内嵌浏览器对比"></a>qt内嵌浏览器对比</h2><p><a target="_blank" rel="noopener" href="https://docs.qq.com/sheet/DWFBvTU1GQWFJTGJE">https://docs.qq.com/sheet/DWFBvTU1GQWFJTGJE</a></p>
+<h2 id="CEF下载编译"><a href="#CEF下载编译" class="headerlink" title="CEF下载编译"></a>CEF下载编译</h2><h3 id="cef-简介"><a href="#cef-简介" class="headerlink" title="cef 简介"></a>cef 简介</h3><p>The Chromium Embedded Framework (CEF) 是基于Google Chrome开源的项目， 这个项目主要用途在于方便第三方软件可以嵌入浏览器。</p>
+<h3 id="二进制发行版本下载"><a href="#二进制发行版本下载" class="headerlink" title="二进制发行版本下载"></a>二进制发行版本下载</h3><p>下载地址如下：<br><a target="_blank" rel="noopener" href="https://cef-builds.spotifycdn.com/index.html">https://cef-builds.spotifycdn.com/index.html</a>根据你的操作系统下载，本人下载的是windows 64bit标准版 cef_binary_109.1.18+gf1c41e4+chromium-109.0.5414.120_windows64</p>
+<h3 id="cmake-生成项目工程"><a href="#cmake-生成项目工程" class="headerlink" title="cmake 生成项目工程"></a>cmake 生成项目工程</h3><p>如图所示，source code是下载解压缩后的地址，并设置好buid地址项目地址，configre里设置指定项目平台，这里指定vs2019.</p>
+<h3 id="vs2019编译"><a href="#vs2019编译" class="headerlink" title="vs2019编译"></a>vs2019编译</h3><ul>
+<li>打开vs工程</li>
+<li>编译libcef_dll_wrapper</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://maidoupig.cn/2023/08/05/qt/" data-id="cll0xvu630001u62eg40idvvg" data-title="qt环境安装" class="article-share-link"><span class="fa fa-share">Share</span></a>
+      
+      
+      
+    </footer>
   </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/08/07/core/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          core
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/08/05/cmake/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">cmake学习笔记</div>
+    </a>
+  
+</nav>
+
+  
 </article>
-  
-  
-    </div></section>
-  
 
 
 </section>
